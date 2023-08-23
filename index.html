@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Need for Speed</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+    .hud {
+      color: wheat;
+      position: absolute;
+      font-size: 2rem;
+      z-index: 1000;
+      margin: 0;
+    }
+    .center {
+      width: 100vw;
+      text-align: center;
+      translate: 0 43vh;
+      font-size: xx-large;
+    }
+  </style>
+  <body>
+    <script type="module" src="./src/main.js"></script>
+    <div id="start" class="center" style="translate: 0 29vh">
+      Press Enter to Play.<br/>
+      Instructions -
+      <ol style="font-size: x-large;list-style-type: none">
+        <li>Press W to accelarate and S to brake and reverse.</li>
+        <li>Press A and D to go left and right respectively.</li>
+        <li>Press SpaceBar to use the hand brake (to drift)</li>
+        <li>Press T to toggle between first person and third person view.</li>
+      </ol>
+    </div>
+    <div id="game" style="display: none;">
+      <div style="position: absolute; width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center;">
+        <p id="timer" style="z-index: 100; color: wheat; font-size: 5vw;">3</p>
+      </div>
+      <div>
+        <p class="hud" id="time" style="right: 10px; top: 0;">Time: 0</p>
+        <p class="hud" id="health" style="right: 10px; top: 3rem">Health: 100</p>
+        <p class="hud" id="score" style="right: 10px; top: 6rem;">Score: 100</p>
+        <p class="hud" id="fuel" style="right: 10px; top: 9rem;">Fuel: 100</p>
+        <p class="hud" id="fuel-distance" style="right: 10px; top: 12rem;">Nearest Fuel Can: 0m</p>
+        <p class="hud" id="mileage" style="right: 10px; top: 15rem;">Mileage: 0</p>
+        <p class="hud" id="laps" style="right: 50vw; top: 1rem;">Lap 1</p>
+      </div>
+      <div id="ThreeJS" style="position: absolute; left: 0px; top: 0px"></div>
+      <div id="map" style="position: absolute; left: 10px; top: 10px"></div>
+    </div>
+    <div id="health-over" class="center" style="display:none;">
+      Game Over! Your Car exploded.
+    </div>
+    <div id="fuel-over" class="center" style="display:none;">
+      Game Over! Your fuel got over.
+    </div>
+    <div id="game-over" class="center" style="display: none; translate: 0 20vh;">
+      Congratulations! You completed the track. The rankings were - 
+      <div id="rankings" style="display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 2rem;">
+        
+      </div>
+    </div>
+  </body>
+</html>
